@@ -153,4 +153,12 @@ body {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
+    .meal-item{
+        margin: 0;
+    }
+}
+@media screen and (min-width: 992px){
+    #meal {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
