@@ -30,14 +30,15 @@ function getMealList(){
     */
    .then(response => response.json())
    .then(data => {
+    console.log("prints out meals")
     console.log(data)
     let html = "";
     if(data.meals){
         data.meals.forEach(meal => {
             html += `
-            <div class="meal-item data-id ="${meal.idMeal}">
+            <div class="meal-item" data-id="${meal.idMeal}">
                 <div class="meal-img">
-                    <img src="${meal.strMealThumb}" alt = "food">
+                    <img src="${meal.strMealThumb}" alt="food">
                 </div>
                 <div class="meal-name">
                     <h3>${meal.strMeal}</h3>
@@ -62,6 +63,7 @@ function getMealRecipe(e){
     if(e.target.classList.contains('recipe-btn')){
         let mealItem = e.target.parentElement.parentElement;
         console.log(mealItem)
+        console.log(mealItem.dataset.id)
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
         .then(response => response.json())
         .then(data => {
