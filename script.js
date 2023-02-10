@@ -8,6 +8,11 @@ document.querySelector('#search-btn').addEventListener('keypress', function(e) {
 })
 // event listeners 
 searchBtn.addEventListener('click', getMealList);
+// searchBtn.addEventListener('keydown', (event) => {
+//     if (event.key === 'Enter'){
+//         getMealList();
+//     }
+// });
 mealList.addEventListener('click', getMealRecipe);
 /** 
  * !.trim() method removes whitespace from both ends of a string and returns a new string, without modifying the original string 
